@@ -24,3 +24,31 @@ print(df_B.columns)
 p = pd.Panel({'ClassA' : df_A,
    'ClassB' : df_B})
 print(p.shape)
+
+
+# //df_s1s4 = df_A.loc[df_A['index'].apply(lambda x : x.endswith('1'))]
+# WORKING WITH CSV FILE
+
+df_A.to_csv('classA')
+
+df_A2= pd.read_csv('classA')
+
+print(df_A2)
+
+df_A3 = pd.read_csv('classA',index_col=0)
+
+print(df_A3)
+
+df_B.to_csv('classB')
+
+df_B2 = pd.read_csv('classB')
+
+print(df_B2)
+
+df_B3 = pd.read_csv('classB', header = None)
+
+print(df_B3)
+
+df_B4 = pd.read_csv('classB', header = None,skiprows = 2)
+
+print(df_B4)
