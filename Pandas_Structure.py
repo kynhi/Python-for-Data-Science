@@ -56,6 +56,34 @@ df_B4 = pd.read_csv('classB', header = None,skiprows = 2)
 
 print(df_B4)
 
+#4 INDEXING DATAFRAMES
+dates = pd.date_range('01-09-2017','15-09-2017')
+
+print(dates[2])
+
+datelist = ['14-Sep-2017','9-Sep-2017']
+dates_to_be_search = pd.to_datetime(datelist)
+
+print(dates_to_be_search)
+
+print(dates_to_be_search.isin(dates))
+
+arraylist = [['classA']*5 + ['classB']*5,['s1','s2','s3','s4','s5']*2]
+
+mi_index = pd.MultiIndex.from_arrays(arraylist)
+
+print(mi_index.levels)
+
+#5 DATA CLEANING
+
+df_A.loc['s3'] = np.nan
+
+df_A.loc['s5'].Student_weight = np.nan
+
+df_A2 = df_A.dropna()
+
+print(df_A2)
+
 #6 DATA AGGREGATION
 
 df_A_filter1 = df_A[df_A['Student_height'] > 160] & df_A[df_A['Student_weight'] > 80]
@@ -82,6 +110,7 @@ df_AA = df_A.append(s)
 
 print(df_AA)
 df_B.index = ['s7','s8','s9','s10','s11']
+#df_B = df_B.rename( index= {'s1' : 's7','s2':'s8','s3':'s9','s4':'s10','s5':'s11'})
 
 df_B['Gender'] = ['F','M','F','F','M']
 
