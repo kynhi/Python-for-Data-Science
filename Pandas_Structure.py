@@ -5,22 +5,13 @@ import pandas as pd
 heights_A = pd.Series([176.2,158.4,167.6,156.2,161.4],index = ['s1','s2','s3','s4','s5'])
 weights_A = pd.Series([85.1,90.2,76.8,80.4,78.9],index = ['s1','s2','s3','s4','s5'])
 df_A = pd.DataFrame({'Student_height': heights_A,'Student_weight':weights_A })
-<<<<<<< HEAD
 np.random.seed(100)
 heights_B = pd.Series(np.random.normal(170.0,25,5),index = ['s1','s2','s3','s4','s5'])
 weights_B = pd.Series(np.random.normal(75.0,12,5),index = ['s1','s2','s3','s4','s5'])
 df_B = pd.DataFrame({'Student_height': heights_B,'Student_weight':weights_B })
-=======
-heights_B = pd.Series(np.random.normal(170.0,25,5),index = ['s1','s2','s3','s4','s5'])
-weights_B = pd.Series(np.random.normal(75.0,12,5),index = ['s1','s2','s3','s4','s5'])
->>>>>>> 7a2f312bb4d13308db186864b80a9cc3e09c7890
 
 df_B = pd.DataFrame({'Student_height': heights_B,'Student_weight':weights_B })
 print(heights_A.shape)
-<<<<<<< HEAD
-=======
-
->>>>>>> 7a2f312bb4d13308db186864b80a9cc3e09c7890
 
 print(weights_A.dtype)
 
@@ -28,11 +19,6 @@ print(weights_A.dtype)
 
 print(df_A.shape)
 
-<<<<<<< HEAD
-
-=======
-np.random.seed(100)
->>>>>>> 7a2f312bb4d13308db186864b80a9cc3e09c7890
 
 print(heights_B.mean())
 
@@ -70,7 +56,6 @@ df_B4 = pd.read_csv('classB', header = None,skiprows = 2)
 
 print(df_B4)
 
-<<<<<<< HEAD
 #4 INDEXING DATAFRAMES
 dates = pd.date_range('01-09-2017','15-09-2017')
 
@@ -99,8 +84,6 @@ df_A2 = df_A.dropna()
 
 print(df_A2)
 
-=======
->>>>>>> 7a2f312bb4d13308db186864b80a9cc3e09c7890
 #6 DATA AGGREGATION
 
 df_A_filter1 = df_A[df_A['Student_height'] > 160] & df_A[df_A['Student_weight'] > 80]
@@ -114,7 +97,6 @@ print(df_A_filter2)
 df_A['Gender'] = ['M','F','M','M','F']
 df_groups =  df_A.groupby('Gender')
 
-<<<<<<< HEAD
 print(df_groups.mean())
 
 #DATA MERGING 1
@@ -147,6 +129,3 @@ print(transaction)
 mdf = master.merge(transaction,on = 'nameid',how= 'inner')
 
 print(mdf)
-=======
-print(df_groups.mean())
->>>>>>> 7a2f312bb4d13308db186864b80a9cc3e09c7890
